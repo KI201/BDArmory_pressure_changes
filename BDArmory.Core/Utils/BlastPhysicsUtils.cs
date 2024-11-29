@@ -109,6 +109,7 @@ namespace BDArmory.Core.Utils
         }
 
         /// <summary>
+        /// Testing changes to pressure, reset 1000 to pressure
         /// Calculate newtons from the pressure in kPa and the surface on Square meters
         /// </summary>
         /// <param name="pressure">kPa</param>
@@ -116,7 +117,7 @@ namespace BDArmory.Core.Utils
         /// <returns></returns>
         private static double CalculateForce(double pressure, float surface, double timeInMs)
         {
-            return pressure * 1000f * surface * (timeInMs / 1000f);
+            return 1000 * 1000f * surface * (timeInMs / 1000f);
         }
 
         /// <summary>
@@ -138,7 +139,8 @@ namespace BDArmory.Core.Utils
         /// <returns>explosive range in meters </returns>
         public static float CalculateExplosiveMass(float range)
         {
-            return (float)Math.Pow((range / 14.8f), 3);
+            return (float)Math.Pow((range / 14.8f), 3);
+
         }
     }
 
